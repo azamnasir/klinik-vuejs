@@ -13,7 +13,6 @@ const endTime = computed(() => doctorSchedules.endTime);
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const timesArray = ref([]);
 const availableTimes = computed(() => doctorSchedules.availableTimes);
-
 async function times(startTime, endTime) {
     const convertToMinutes = (time) => {
         const [hours, minutes] = time.split(':').map(Number);
@@ -35,6 +34,22 @@ async function times(startTime, endTime) {
 }
 
 const showWarning = ref(false)
+const isAvailable = ref('');
+
+
+async function fetchIsAvailable() {
+	try{
+		await axios.get('/doctor-schedules-fetch-doctors-availability').then((res)=>{   
+			isAvailable.value = res.data.data
+			console.log(["Docts availability from doctorSchedules.js" ,res.data.data, isAvailable.value]);  
+		}).catch((err)=>{
+			console.log(err)
+		})
+	}
+	catch(error){
+		console.log(error)
+	}
+}
 onMounted(async () => {
     await new Promise(resolve => setTimeout(resolve, 2000));
     if (!startTime.value && !endTime.value) {
@@ -42,6 +57,7 @@ onMounted(async () => {
         showWarning.value = true
     }
     await times(startTime.value, endTime.value);
+    await fetchIsAvailable(); 
     
 });
 
@@ -96,6 +112,37 @@ const toggleAvailability = async (selectedDay, selectedStartTime) => {
         toast.error(err.response ? err.response.data : err.message);
     }
 }
+
+
+const toggleDoctorsAvailability = async () => {
+    try {
+        await axios.post('/doctor-schedules-toggle-doctors-availability').then(async (res) => { 
+            toast.success(res.data.message)
+            const btnId = 'doctorsAvailabilityButton'
+            const btn = document.getElementById(btnId)
+
+            if (btn) {
+
+                if (btn.innerHTML == '<i class="fas fa-check text-white"></i>') {
+                    btn.className = 'bg-red-600 w-5 rounded-lg'
+                    btn.innerHTML = '<i class="fas fa-times text-white">'
+                }
+                else {
+                    btn.className = 'bg-green-500 w-5 rounded-lg'
+                    btn.innerHTML = '<i class="fas fa-check text-white"></i>'
+                }
+            }
+
+
+        }).catch((err) => {
+            toast.error(err.response ? err.response.data : err.message);
+        })
+    }
+    catch (err) {
+        console.error(err.response ? err.response.data : err.message);
+        toast.error(err.response ? err.response.data : err.message);
+    }
+}
 </script>
 
 <template>
@@ -106,10 +153,26 @@ const toggleAvailability = async (selectedDay, selectedStartTime) => {
         <div class="flex items-center w-full min-[1025px]:w-[75%] flex-col gap-3">
             <Header />
 
+            
             <div class="flex justify-center w-[80%] max-[1025px]:w-[90%]">
                 <div class="p-8 text-white w-full space-y-14">
-                    <h2 class="text-3xl font-bold mb-6 text-gray-800 dark:text-gray-300">Doctor Schedule</h2>
-
+                    <h2 class="text-3xl font-bold mb-6 text-gray-800 dark:text-gray-300">Doctor Schedules</h2>
+					<div class="flex  w-[80%] max-[1025px]:w-[90%]">
+						<h3 class="text-3xl font-bold mb-6 text-gray-800 dark:text-gray-300"> Doctor's Availability </h3> 
+						<span>	
+							<button @click="toggleDoctorsAvailability()"
+								:class="isAvailable == '1'
+									? 'bg-green-500 w-5 rounded-lg'
+									: 'bg-red-600 w-5 rounded-lg'"
+									id="doctorsAvailabilityButton">
+								<i  :class="isAvailable == '1'
+									? 'fas fa-check text-white'
+									: 'fas fa-times text-white'">
+								</i>
+							</button>
+						</span>
+					</div>
+					
                     <div class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg max-w-xl ">
                         <label class="block text-sm font-medium text-gray-600 mb-2 dark:text-gray-300">
                             Start Time (Optional)
@@ -183,7 +246,7 @@ const toggleAvailability = async (selectedDay, selectedStartTime) => {
             </div>
 
         </div>
-    </div>
+    </div> 
 </template>
 
 <style scoped></style>

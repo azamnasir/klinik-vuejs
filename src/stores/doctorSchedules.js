@@ -8,7 +8,8 @@ export const useDoctorSchedules = defineStore({
         startTime: null,
         endTime: null,
         availableTimes: null,
-        message: null
+        message: null,
+		isAvailable: 0 
     }),
 
     actions: {
@@ -31,6 +32,20 @@ export const useDoctorSchedules = defineStore({
             try{
                 await axios.get('/doctor-schedules-fetch-availability').then((res)=>{
                     this.availableTimes = res.data
+                }).catch((err)=>{
+                    console.log(err)
+                })
+            }
+            catch(error){
+                console.log(error)
+            }
+        },
+		//adding new method to check if dr is available
+		async fetchIsAvailable() {
+            try{
+                await axios.get('/doctor-schedules-fetch-doctors-availability').then((res)=>{  
+                    this.isAvailable = res.data
+					console.log(["Docts availability from doctorSchedules.js" ,res.data, this.isAvailable]);  
                 }).catch((err)=>{
                     console.log(err)
                 })

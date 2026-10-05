@@ -40,7 +40,7 @@ const role = useFetchUserRole()
                     </svg>
                 </div>
                 <div class="flex justify-start px-7">
-                    <RouterLink to="/" class="text-3xl font-recursive font-bold dark:text-gray-200">Klinik</RouterLink>
+                    <RouterLink to="/" class="text-3xl font-recursive font-bold dark:text-gray-200">IA Clinic</RouterLink>
                 </div>
                 <div class="flex flex-col gap-2">
                     <div class="flex items-center w-[75%] justify-start mt-10 px-7">

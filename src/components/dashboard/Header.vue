@@ -73,7 +73,7 @@ onMounted(() => {
     <div class="py-7 w-[90%] flex justify-center">
         <div class="navbar bg-base-100 h-fit rounded-2xl w-full dark:bg-darkmodebg">
             <div class="flex-1">
-                <RouterLink to="/" class="btn btn-ghost text-xl max-[1024px]:hidden dark:text-white">Klinik</RouterLink>
+                <RouterLink to="/" class="btn btn-ghost text-xl max-[1024px]:hidden dark:text-white">IA Clinic</RouterLink>
                 <div v-if="!sideBar.showSideBar" class="px-5 py-7 absolute flex items-center">
                     <svg @click="sideBar.toggleSideBar" xmlns="http://www.w3.org/2000/svg"
                         class="w-7 h-7 cursor-pointer min-[1025px]:hidden absolute"

@@ -8,26 +8,26 @@
         <h3 class="font-recursive text-[#A1A7B0] tracking-widest">Meet Our Experts</h3>
         <h1 class="font-recursive dark:text-white font-bold text-6xl max-[1024px]:text-4xl text-[#333333] mt-7">Our Team</h1>
         <div class="flex gap-7 mt-14 max-[1024px]:flex-col max-[1024px]:w-[90%]">
-            <div class="flex flex-col w-1/4 max-[1024px]:w-full">
+            <div class="flex flex-col w-1/2 max-[1024px]:w-full">
                 <div>
                     <img src="/src/assets/images/doctor1.jpg" alt="" class="rounded">
                 </div>
                 <div class="bg-white dark:bg-primarycardsbg shadow-lg p-5 flex flex-col flex-grow">
-                    <h1 class="font-recursive dark:text-white font-bold text-3xl max-[1024px]:text-4xl text-[#333333] mt-7">James Smith</h1>
+                    <h1 class="font-recursive dark:text-white font-bold text-3xl max-[1024px]:text-4xl text-[#333333] mt-7">Dr. Hafiz Muhammad Ahmad</h1>
                     <h3 class="font-recursive text-[#A1A7B0] tracking-widest mt-5">Head Doctor</h3>
                 </div>
             </div>
 
-            <div class="flex flex-col w-1/4 max-[1024px]:w-full">
+            <div class="flex flex-col w-1/2 max-[1024px]:w-full">
                 <div>
                     <img src="/src/assets/images/doctor2.jpg" alt="" class="rounded">
                 </div>
                 <div class="bg-white dark:bg-primarycardsbg shadow-lg p-5 flex flex-col flex-grow">
-                    <h1 class="font-recursive dark:text-white font-bold text-3xl max-[1024px]:text-4xl text-[#333333] mt-7">Daniel Lee</h1>
+                    <h1 class="font-recursive dark:text-white font-bold text-3xl max-[1024px]:text-4xl text-[#333333] mt-7">Dr. Qamar Raza</h1>
                     <h3 class="font-recursive text-[#A1A7B0] tracking-widest mt-5">Primary Care</h3>
                 </div>
             </div>
-
+		<!--
             <div class="flex flex-col w-1/4 max-[1024px]:w-full">
                 <div>
                     <img src="/src/assets/images/doctor4.jpg" alt="" class="rounded">
@@ -47,6 +47,8 @@
                     <h3 class="font-recursive text-[#A1A7B0] tracking-widest mt-5">Diagnostic Specialist</h3>
                 </div>
             </div>
+			
+		-->	
         </div>
 
         <!-- Navigation buttons (commented out) -->

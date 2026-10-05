@@ -15,7 +15,7 @@
             <div class="bg-white dark:bg-primarycardsbg shadow-lg w-1/3 max-[1024px]:w-[90%] p-10 mt-10 flex flex-col justify-between gap-[120px]">
                 <div>
                     <p class="font-recursive dark:text-gray-300 text-[#333333] tracking-widest font-bold text-xl">
-                        Modern Health Clinic has transformed my life. Their commitment to quality care is unmatched in the industry.
+                        Ibrahim Afzal Clinic has transformed my life. Their commitment to quality care is unmatched in the industry.
                     </p>
                 </div>
                 <div class="flex max-[1024px]:justify-center items-center gap-6 mt-10">
@@ -23,7 +23,7 @@
                         <img src="/src/assets/images/testimonials-image1.jpg" alt="" class="h-full w-full object-cover">
                     </div>
                     <div>
-                        <h2 class="font-recursive text-[#333333] text-xl dark:text-gray-400">Jessica Brown</h2>
+                        <h2 class="font-recursive text-[#333333] text-xl dark:text-gray-400">Jameela Farooq</h2>
                     </div>
                 </div>
             </div>
@@ -31,7 +31,7 @@
             <div class="bg-white dark:bg-primarycardsbg shadow-lg w-1/3 max-[1024px]:w-[90%] p-10 mt-10 flex flex-col justify-between gap-[120px]">
                 <div>
                     <p class="font-recursive dark:text-gray-300 text-[#333333] tracking-widest font-bold text-xl">
-                        Thanks to the Modern Health Clinic, I finally feel heard and cared for. Exceptional service!
+                        Thanks to the Ibrahim Afzal Clinic, I finally feel heard and cared for. Exceptional service!
                     </p>
                 </div>
                 <div class="flex max-[1024px]:justify-center items-center gap-6 mt-10">
@@ -39,7 +39,7 @@
                         <img src="/src/assets/images/testimonials-image2.jpg" alt="" class="h-full w-full object-cover">
                     </div>
                     <div>
-                        <h2 class="font-recursive text-[#333333] text-xl dark:text-gray-400">David Johnson</h2>
+                        <h2 class="font-recursive text-[#333333] text-xl dark:text-gray-400">Asim Mehmood</h2>
                     </div>
                 </div>
             </div>
@@ -47,7 +47,7 @@
             <div class="bg-white dark:bg-primarycardsbg shadow-lg w-1/3 max-[1024px]:w-[90%] p-10 mt-10 flex flex-col justify-between gap-[120px]">
                 <div>
                     <p class="font-recursive dark:text-gray-300 text-[#333333] tracking-widest font-bold text-xl">
-                        The best decision I made was visiting Modern Health Clinic. Top-notch care!
+                        The best decision I made was visiting Ibrahim Afzal Clinic. Top-notch care!
                     </p>
                 </div>
                 <div class="flex max-[1024px]:justify-center items-center gap-6 mt-10">
@@ -55,7 +55,7 @@
                         <img src="/src/assets/images/testimonials-image3.jpg" alt="" class="h-full w-full object-cover">
                     </div>
                     <div>
-                        <h2 class="font-recursive text-[#333333] text-xl dark:text-gray-400">Karen Thomas</h2>
+                        <h2 class="font-recursive text-[#333333] text-xl dark:text-gray-400">Kareem Jamal</h2>
                     </div>
                 </div>
             </div>

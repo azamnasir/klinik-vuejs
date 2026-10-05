@@ -22,7 +22,7 @@
                     </div>
                     <div>
                         <span class="font-recursive text-[#A1A7B0]">Address</span>
-                        <h2 class="font-recursive text-[#333333] text-xl dark:text-gray-300">123 Wellness Ave, City</h2>
+                        <h2 class="font-recursive text-[#333333] text-xl dark:text-gray-300">Behal chungi road, Bhakkar</h2>
                     </div>
                 </div>
 
@@ -36,7 +36,7 @@
                     </div>
                     <div>
                         <span class="font-recursive text-[#A1A7B0]">Phone</span>
-                        <h2 class="font-recursive text-[#333333] text-xl dark:text-gray-300">123-456-7890</h2>
+                        <h2 class="font-recursive text-[#333333] text-xl dark:text-gray-300">0334 0808849</h2>
                     </div>
                 </div>
 
@@ -49,7 +49,7 @@
                     </div>
                     <div>
                         <span class="font-recursive text-[#A1A7B0]">Mail</span>
-                        <h2 class="font-recursive text-[#333333] text-xl dark:text-gray-300">info@klinik.com</h2>
+                        <h2 class="font-recursive text-[#333333] text-xl dark:text-gray-300">ibrahimafzalclinic@gmail.com</h2>
                     </div>
                 </div>
 

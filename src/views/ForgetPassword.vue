@@ -64,7 +64,7 @@ const forgetPassword = async () => {
                 <div
                     class="w-[50%] max-[1280px]:w-[80%] max-[1536px]:w-[90%] max-[1280px]:p-3 dark:bg-darkmodebg bg-white shadow-lg p-20 flex flex-col items-center max-[1280px]:justify-center">
                     <!-- <h1 class="font-recursive font-bold text-4xl self-start text-[#333333] dark:text-white"><a
-                        href="">Klinik</a>
+                        href="">IA Clinic</a>
                 </h1> -->
 
 

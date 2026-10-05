@@ -1,7 +1,7 @@
 <script setup>
 import Header from '../components/Header.vue'
 import Footer from '../components/Footer.vue'
-import { ref } from 'vue';
+import { ref, computed } from 'vue'; 
 import axios from 'axios';
 import { Toaster, toast } from 'vue-sonner';
 import { useRouter } from 'vue-router';
@@ -10,6 +10,7 @@ import { useRouter } from 'vue-router';
 let pass = ref('')
 let passConfirmation = ref('')
 const name = ref('')
+const phone = ref('')
 const email = ref('')
 
 const showPass = ref(false)
@@ -40,6 +41,22 @@ let itContainsLowerCase = ref(false)
 let itContainsUpperCase = ref(false)
 let itContainsSpecialChar = ref(false)
 let itContains8Letters = ref(false)
+
+
+
+// Computed property to check if the input is valid
+const isValid = computed(() => {
+  const regex = /^03\d{9}$/
+  return regex.test(phone.value)
+})
+
+// Optional: Prevent users from typing non-numeric characters
+const restrictToNumbers = (event) => {
+  if (!/[0-9]/.test(event.key)) {
+    event.preventDefault()
+  }
+}
+
 
 const toggleConfPass = () => {
     showConfirmPass.value = !showConfirmPass.value
@@ -177,6 +194,7 @@ const signUp = async () => {
         axios.get('/sanctum/csrf-cookie').then(response => {
             axios.post('/register', {
                 name: name.value,
+                phone: phone.value,
                 email: email.value,
                 password: pass.value,
                 password_confirmation: passConfirmation.value
@@ -258,6 +276,25 @@ const removeShowPassContainer = () => {
                         <input v-model="name"
                             class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
                             type="text" placeholder="Name" />
+							</br>
+							</br>
+							</br>
+							</br>
+							</br>
+						<input v-model="phone"
+                            class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
+                            type="text"  
+							maxlength="11" 
+							placeholder="03XXXXXXXXX" 
+							@keypress="restrictToNumbers" 
+							:class="{ 'input-error': phone && !isValid }" />
+						  <!-- Validation Feedback -->
+							<p v-if="phone && !isValid" class="error-msg">
+							  Must be exactly 11 digits and start with 03.
+							</p>
+							<p v-else-if="isValid" class="success-msg">
+							  Valid phone number!
+							</p>		
                         <input v-model="email"
                             class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
                             type="email" placeholder="Email" />
@@ -387,3 +424,16 @@ const removeShowPassContainer = () => {
 
 
 </template>
+<style scoped>
+.input-error {
+  border: 1px solid red;
+}
+.error-msg {
+  color: red;
+  font-size: 0.85rem;
+}
+.success-msg {
+  color: green;
+  font-size: 0.85rem;
+}
+</style>

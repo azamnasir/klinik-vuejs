@@ -65,10 +65,11 @@ const login = async () => {
     <div class="dark:bg-darkmodebg">
         <Toaster richColors position="top-right" />
         <Header />
-<!-- Credentials Section -->
+<!-- Credentials Section 
 <div class="mt-10 mx-auto w-[60%] max-[1536px]:w-[90%] dark:bg-darkmodebg bg-white shadow-lg p-8 rounded-lg">
             <h2 class="text-2xl font-bold text-gray-700 dark:text-gray-300 mb-5 text-center">Demo Account Credentials
             </h2>
+			
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
                 <div class="p-4 bg-gray-100 dark:bg-gray-800 rounded shadow">
                     <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Admin</h3>
@@ -97,12 +98,13 @@ const login = async () => {
                 </div>
             </div>
         </div>
+		-->
         <div class="flex justify-center">
             <div class="w-[60%] max-[1536px]:w-[90%] text-6xl flex h-fit max-[1280px]:justify-center mt-20">
                 <div
                     class="w-[50%] max-[1280px]:w-[80%] max-[1536px]:w-[90%] max-[1280px]:p-3 dark:bg-darkmodebg bg-white shadow-lg p-20 flex flex-col items-center max-[1280px]:justify-center">
                     <!-- <h1 class="font-recursive font-bold text-4xl self-start text-[#333333] dark:text-white"><a
-                        href="">Klinik</a>
+                        href="">IA Clinic</a>
                 </h1> -->
 
                     <!-- <button
@@ -119,7 +121,7 @@ const login = async () => {
                     <div class="my-12  text-center">
                         <div
                             class="dark:bg-transparent dark:text-gray-300 px-2 inline-block text-sm text-gray-600 tracking-wide font-medium bg-white transform translate-y-1/2">
-                            Sign In with your Klinik E-mail
+                            Sign In with your IA Clinic E-mail
                         </div>
                     </div>
 

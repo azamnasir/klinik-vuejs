@@ -27,7 +27,7 @@ function scrollToSection(id) {
             </div>
             <div 
                 class="w-[60%] max-[1024px]:w-full max-[1024px]:mt-9 max-[640px]:px-5 max-[768px]:px-10 flex justify-center">
-                <img src="/src/assets/images/hero-image.svg" alt="">
+                <img src="/src/assets/images/clinic.jpeg" alt=""> 
             </div>
             
             <!-- <div id="bookNow-section"

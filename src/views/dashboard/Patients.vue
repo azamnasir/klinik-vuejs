@@ -160,6 +160,7 @@ const deletePatient = async () => {
 };
 
 const email = ref('')
+const phone = ref('')
 const gender = ref('')
 const bloodGroup = ref('')
 const birthDate = ref('')
@@ -175,6 +176,7 @@ const addPatient = async () => {
     try {
         await axios.post('/add-patient', {
             email: email.value,
+            phone: phone.value,
             gender: gender.value,
             bloodGroup: bloodGroup.value,
             birthDate: birthDate.value,
@@ -189,6 +191,7 @@ const addPatient = async () => {
             const objectToAdd = {
                 id: res.data.newPatient.id,
                 name: res.data.newPatient.name,
+                phone: res.data.newPatient.phone,
                 email: res.data.newPatient.email,
                 avatar: res.data.newPatient.avatar,
                 created_at: res.data.newPatient.created_at,
@@ -275,6 +278,10 @@ const showPatientDetailsModalFun = async (patient) => {
                                     Name
                                     <span>{{ getSortIcon('name') }}</span>
                                 </th>
+								<th @click="sortBy('phone')" class="cursor-pointer dark:text-gray-300">
+                                    Phone
+                                    <span>{{ getSortIcon('phone') }}</span>
+                                </th>
                                 <th @click="sortBy('email')" class="cursor-pointer dark:text-gray-300">
                                     Email
                                     <span>{{ getSortIcon('email') }}</span>
@@ -307,6 +314,10 @@ const showPatientDetailsModalFun = async (patient) => {
                                     </div>
                                 </td>
                                 <td class="dark:text-gray-300">
+                                    {{ patient.phone }}
+                                    <br />
+                                </td>
+								<td class="dark:text-gray-300">
                                     {{ patient.email }}
                                     <br />
                                 </td>
@@ -341,6 +352,10 @@ const showPatientDetailsModalFun = async (patient) => {
                                     </div>
                                 </td>
                                 <td class="dark:text-gray-300">
+                                    {{ pat.phone }}
+                                    <br />
+                                </td>
+								<td class="dark:text-gray-300">
                                     {{ pat.email }}
                                     <br />
                                 </td>
@@ -365,13 +380,30 @@ const showPatientDetailsModalFun = async (patient) => {
                                     <div class="py-4 flex flex-col gap-3">
                                         <h3 class="text-lg font-bold dark:text-gray-300">Patient Details</h3>
 
+										
+										<!-- Name 
+                                        <label class="form-control w-full max-w-xs">
+                                            <span class="label-text dark:text-gray-300">Name</span>
+                                            <input type="text" placeholder="Enter Name" v-model="name"
+                                                class="input input-bordered w-full max-w-xs mt-2 dark:bg-slate-800 dark:text-gray-300" />
+                                        </label>
+										-->
+										
                                         <!-- Email -->
                                         <label class="form-control w-full max-w-xs">
                                             <span class="label-text dark:text-gray-300">Email</span>
                                             <input type="text" placeholder="Enter Email" v-model="email"
                                                 class="input input-bordered w-full max-w-xs mt-2 dark:bg-slate-800 dark:text-gray-300" />
                                         </label>
-
+										
+										<!-- Phone 
+                                        <label class="form-control w-full max-w-xs">
+                                            <span class="label-text dark:text-gray-300">Phone</span>
+                                            <input type="text" placeholder="Enter Phone" v-model="phone"
+                                                class="input input-bordered w-full max-w-xs mt-2 dark:bg-slate-800 dark:text-gray-300" />
+                                        </label>
+										-->
+										
                                         <!-- Gender -->
                                         <label class="form-control w-full max-w-xs">
                                             <span class="label-text dark:text-gray-300">Gender</span>

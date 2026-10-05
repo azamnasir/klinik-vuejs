@@ -119,41 +119,41 @@ const router = createRouter({
         {
             path: '/',
             component: () => import('/src/views/Home.vue'),
-            meta: { requiresAuth: true, requiresHeaderPhoto: '', title: 'Klinik- Home' },
+            meta: { requiresAuth: true, requiresHeaderPhoto: '', title: 'IA Clinic- Home' },
 
         },
         {
             path: '/login',
             component: () => import('/src/views/Login.vue'),
             beforeEnter: userGuest,
-            meta: { title: 'Klinik - Login' }
+            meta: { title: 'IA Clinic - Login' }
 
         },
         {
             path: '/signup',
             component: () => import('/src/views/Signup.vue'),
             beforeEnter: userGuest,
-            meta: { title: 'Klinik - Signup' }
+            meta: { title: 'IA Clinic - Signup' }
 
         },
         {
             path: '/reserve-appointment',
             component: () => import('../views/ReserveAppointment.vue'),
-            meta: { title: 'Klinik - Reserve Appointment' }
+            meta: { title: 'IA Clinic - Reserve Appointment' }
 
         },
         {
             path: '/forgot-password',
             component: () => import('../views/ForgetPassword.vue'),
             beforeEnter: userGuest,
-            meta: { title: 'Klinik - Forget Password' }
+            meta: { title: 'IA Clinic - Forget Password' }
 
         },
         {
             path: '/password-reset/:token',
             component: () => import('../views/ResetPassword.vue'),
             beforeEnter: userGuest,
-            meta: { title: 'Klinik - Reset Password' }
+            meta: { title: 'IA Clinic - Reset Password' }
 
         },
         {
@@ -168,7 +168,7 @@ const router = createRouter({
                 requiresIsNurse: '',
                 requiresIsPharmacist: '',
                 requiresIsLaboratorist: '',
-                title: 'Klinik - Profile',
+                title: 'IA Clinic - Profile',
             },
         },
         // {
@@ -197,125 +197,125 @@ const router = createRouter({
                 requiresCountPharmacists: '',
                 requiresCountLaboratorists: '',
                 requiresCountPatients: '',
-                title: 'Klinik - AllUsers',
+                title: 'IA Clinic - AllUsers',
             },
         },
         {
             path: '/departments',
             component: () => import('../views/dashboard/Departments.vue'),
             beforeEnter: [isUserHaveAccessToDashboard, isUserAdmin],
-            meta: { title: 'Klinik - Departments' }
+            meta: { title: 'IA Clinic - Departments' }
 
         },
         {
             path: '/doctors',
             component: () => import('../views/dashboard/Doctors.vue'),
             beforeEnter: [isUserHaveAccessToDashboard, isUserAdmin],
-            meta: { title: 'Klinik - Doctors' }
+            meta: { title: 'IA Clinic - Doctors' }
 
         },
         {
             path: '/nurses',
             component: () => import('../views/dashboard/Nurses.vue'),
             beforeEnter: [isUserHaveAccessToDashboard, isUserAdmin],
-            meta: { title: 'Klinik - Nurses' }
+            meta: { title: 'IA Clinic - Nurses' }
 
         },
         {
             path: '/laboratorists',
             component: () => import('../views/dashboard/Laboratorists.vue'),
             beforeEnter: [isUserHaveAccessToDashboard, isUserAdmin],
-            meta: { title: 'Klinik - Laboratorists' }
+            meta: { title: 'IA Clinic - Laboratorists' }
 
         },
         {
             path: '/pharmacists',
             component: () => import('../views/dashboard/Pharmacists.vue'),
             beforeEnter: [isUserHaveAccessToDashboard, isUserAdmin],
-            meta: { title: 'Klinik - Pharmacists' }
+            meta: { title: 'IA Clinic - Pharmacists' }
 
         },
         {
             path: '/patients',
             component: () => import('../views/dashboard/Patients.vue'),
             beforeEnter: [isUserHaveAccessToDashboard, isUserAdmin],
-            meta: { title: 'Klinik - Patients' }
+            meta: { title: 'IA Clinic - Patients' }
 
         },
         {
             path: '/blood-bank',
             component: () => import('../views/dashboard/BloodBank.vue'),
             beforeEnter: [isUserHaveAccessToDashboard, isUserAdmin],
-            meta: { title: 'Klinik - BloodBank' }
+            meta: { title: 'IA Clinic - BloodBank' }
 
         },
         {
             path: '/blood-donors',
             component: () => import('../views/dashboard/BloodDonors.vue'),
             beforeEnter: [isUserHaveAccessToDashboard, isUserAdmin],
-            meta: { title: 'Klinik - BloodDonors' }
+            meta: { title: 'IA Clinic - BloodDonors' }
 
         },
         {
             path: '/operation-reports',
             component: () => import('../views/dashboard/OperationReports.vue'),
             beforeEnter: [isUserHaveAccessToDashboard, isUserAdmin],
-            meta: { title: 'Klinik - OperationReports' }
+            meta: { title: 'IA Clinic - OperationReports' }
 
         },
         {
             path: '/birth-reports',
             component: () => import('../views/dashboard/BirthReports.vue'),
             beforeEnter: [isUserHaveAccessToDashboard, isUserAdmin],
-            meta: { title: 'Klinik - BirthReports' }
+            meta: { title: 'IA Clinic - BirthReports' }
 
         },
         {
             path: '/death-reports',
             component: () => import('../views/dashboard/DeathReports.vue'),
             beforeEnter: [isUserHaveAccessToDashboard, isUserAdmin],
-            meta: { title: 'Klinik - DeathReports' }
+            meta: { title: 'IA Clinic - DeathReports' }
 
         },
         {
             path: '/bed-allotments',
             component: () => import('../views/dashboard/BedAllotments.vue'),
             beforeEnter: [isUserHaveAccessToDashboard, isUserAdmin],
-            meta: { title: 'Klinik - BedAllotments' }
+            meta: { title: 'IA Clinic - BedAllotments' }
 
         },
         {
             path: '/medicines',
             component: () => import('../views/dashboard/Medicines.vue'),
             beforeEnter: [isUserHaveAccessToDashboard, isUserAdmin],
-            meta: { title: 'Klinik - Medicines' }
+            meta: { title: 'IA Clinic - Medicines' }
 
         },
         {
             path: '/vaccines',
             component: () => import('../views/dashboard/Vaccines.vue'),
             beforeEnter: [isUserHaveAccessToDashboard, isUserAdmin],
-            meta: { title: 'Klinik - Vaccines' }
+            meta: { title: 'IA Clinic - Vaccines' }
 
         },
         {
             path: '/services',
             component: () => import('../views/dashboard/Services.vue'),
             beforeEnter: [isUserHaveAccessToDashboard, isUserAdmin],
-            meta: { title: 'Klinik - Services' }
+            meta: { title: 'IA Clinic - Services' }
 
         },
         {
             path: '/offers',
             component: () => import('../views/dashboard/Offers.vue'),
             beforeEnter: [isUserHaveAccessToDashboard, isUserAdmin],
-            meta: { title: 'Klinik - Offers' }
+            meta: { title: 'IA Clinic - Offers' }
 
         },
         {
             path: '/our-offers',
             component: () => import('../views/OurOffers.vue'),
-            meta: { title: 'Klinik - OurOffers' }
+            meta: { title: 'IA Clinic - OurOffers' }
 
         },
         {
@@ -323,203 +323,203 @@ const router = createRouter({
             name: 'CheckoutSuccess',
             component: () => import('../views/CheckoutOrderSuccess.vue'),
             props: (route) => ({ sessionId: route.query.session_id }),
-            meta: { title: 'Klinik - Checkout Order Success' }
+            meta: { title: 'IA Clinic - Checkout Order Success' }
 
         },
         {
             path: '/checkout/cancel',
             component: () => import('../views/CheckoutOrderCancel.vue'),
-            meta: { title: 'Klinik - Checkout Order Cancel' }
+            meta: { title: 'IA Clinic - Checkout Order Cancel' }
 
         },
         {
             path: '/orders',
             component: () => import('../views/dashboard/Orders.vue'),
             beforeEnter: [isUserHaveAccessToDashboard, isUserAdmin],
-            meta: { title: 'Klinik - Orders' }
+            meta: { title: 'IA Clinic - Orders' }
 
         },
         {
             path: '/doctor-schedules',
             component: () => import('../views/dashboard/doctor/Schedules.vue'),
             beforeEnter: [isUserHaveAccessToDashboard, isUserDoctor],
-            meta: { title: 'Klinik - Schedules' }
+            meta: { title: 'IA Clinic - Schedules' }
 
         },
         {
             path: '/appointment-checkout/success',
             component: () => import('../views/CheckoutAppointmentSuccess.vue'),
             props: (route) => ({ sessionId: route.query.session_id }),
-            meta: { title: 'Klinik - Checkout Appointment Success' }
+            meta: { title: 'IA Clinic - Checkout Appointment Success' }
 
         },
         {
             path: '/appointment-checkout/cancel',
             component: () => import('../views/CheckoutAppointmentCancel.vue'),
-            meta: { title: 'Klinik - Checkout Appointment Cancel' }
+            meta: { title: 'IA Clinic - Checkout Appointment Cancel' }
 
         },
         {
             path: '/appointments',
             component: () => import('../views/dashboard/Appointments.vue'),
             beforeEnter: [isUserHaveAccessToDashboard, isUserAdmin],
-            meta: { title: 'Klinik - Appointments' }
+            meta: { title: 'IA Clinic - Appointments' }
 
         },
         {
             path: '/doctor-appointments',
             component: () => import('../views/dashboard/doctor/Appointments.vue'),
             beforeEnter: [isUserHaveAccessToDashboard, isUserDoctor],
-            meta: { title: 'Klinik - Appointments' }
+            meta: { title: 'IA Clinic - Appointments' }
 
         },
         {
             path: '/doctor-calendar',
             component: () => import('../views/dashboard/doctor/Calendar.vue'),
             beforeEnter: [isUserHaveAccessToDashboard, isUserDoctor],
-            meta: { title: 'Klinik - Calendar' }
+            meta: { title: 'IA Clinic - Calendar' }
 
         },
         {
             path: '/doctor-doctors',
             component: () => import('../views/dashboard/doctor/Doctors.vue'),
             beforeEnter: [isUserHaveAccessToDashboard, isUserDoctor],
-            meta: { title: 'Klinik - Doctors' }
+            meta: { title: 'IA Clinic - Doctors' }
 
         },
         {
             path: '/doctor-patients',
             component: () => import('../views/dashboard/doctor/Patients.vue'),
             beforeEnter: [isUserHaveAccessToDashboard, isUserDoctor],
-            meta: { title: 'Klinik - Patients' }
+            meta: { title: 'IA Clinic - Patients' }
 
         },
         {
             path: '/doctor-bed-allotments',
             component: () => import('../views/dashboard/doctor/BedAllotments.vue'),
             beforeEnter: [isUserHaveAccessToDashboard, isUserDoctor],
-            meta: { title: 'Klinik - BedAllotments' }
+            meta: { title: 'IA Clinic - BedAllotments' }
 
         },
         {
             path: '/doctor-dashboard',
             component: () => import('../views/dashboard/doctor/Dashboard.vue'),
             beforeEnter: [isUserHaveAccessToDashboard, isUserDoctor],
-            meta: { title: 'Klinik - Dashboard' }
+            meta: { title: 'IA Clinic - Dashboard' }
 
         },
         {
             path: '/admin-dashboard',
             component: () => import('../views/dashboard/Dashboard.vue'),
             beforeEnter: [isUserHaveAccessToDashboard, isUserAdmin],
-            meta: { title: 'Klinik - Dashboard' }
+            meta: { title: 'IA Clinic - Dashboard' }
 
         },
         {
             path: '/nurse-dashboard',
             component: () => import('../views/dashboard/nurse/Dashboard.vue'),
             beforeEnter: [isUserHaveAccessToDashboard, isUserNurse],
-            meta: { title: 'Klinik - Dashboard' }
+            meta: { title: 'IA Clinic - Dashboard' }
 
         },
         {
             path: '/nurse-blood-bank',
             component: () => import('../views/dashboard/nurse/BloodBanks.vue'),
             beforeEnter: [isUserHaveAccessToDashboard, isUserNurse],
-            meta: { title: 'Klinik - BloodBanks' }
+            meta: { title: 'IA Clinic - BloodBanks' }
 
         },
         {
             path: '/nurse-blood-donors',
             component: () => import('../views/dashboard/nurse/BloodDonors.vue'),
             beforeEnter: [isUserHaveAccessToDashboard, isUserNurse],
-            meta: { title: 'Klinik - BloodDonors' }
+            meta: { title: 'IA Clinic - BloodDonors' }
 
         },
         {
             path: '/nurse-operation-reports',
             component: () => import('../views/dashboard/nurse/OperationReports.vue'),
             beforeEnter: [isUserHaveAccessToDashboard, isUserNurse],
-            meta: { title: 'Klinik - OperationReports' }
+            meta: { title: 'IA Clinic - OperationReports' }
 
         },
         {
             path: '/nurse-birth-reports',
             component: () => import('../views/dashboard/nurse/BirthReports.vue'),
             beforeEnter: [isUserHaveAccessToDashboard, isUserNurse],
-            meta: { title: 'Klinik - BirthReports' }
+            meta: { title: 'IA Clinic - BirthReports' }
 
         },
         {
             path: '/nurse-death-reports',
             component: () => import('../views/dashboard/nurse/DeathReports.vue'),
             beforeEnter: [isUserHaveAccessToDashboard, isUserNurse],
-            meta: { title: 'Klinik - DeathReports' }
+            meta: { title: 'IA Clinic - DeathReports' }
 
         },
         {
             path: '/nurse-bed-allotments',
             component: () => import('../views/dashboard/nurse/BedAllotments.vue'),
             beforeEnter: [isUserHaveAccessToDashboard, isUserNurse],
-            meta: { title: 'Klinik - BedAllotments' }
+            meta: { title: 'IA Clinic - BedAllotments' }
 
         },
         {
             path: '/nurse-medicines',
             component: () => import('../views/dashboard/nurse/Medicines.vue'),
             beforeEnter: [isUserHaveAccessToDashboard, isUserNurse],
-            meta: { title: 'Klinik - Medicines' }
+            meta: { title: 'IA Clinic - Medicines' }
 
         },
         {
             path: '/nurse-vaccines',
             component: () => import('../views/dashboard/nurse/Vaccines.vue'),
             beforeEnter: [isUserHaveAccessToDashboard, isUserNurse],
-            meta: { title: 'Klinik - Vaccines' }
+            meta: { title: 'IA Clinic - Vaccines' }
 
         },
         {
             path: '/pharmacist-dashboard',
             component: () => import('../views/dashboard/Pharmacist/Dashboard.vue'),
             beforeEnter: [isUserHaveAccessToDashboard, isUserPharmacist],
-            meta: { title: 'Klinik - Dashboard' }
+            meta: { title: 'IA Clinic - Dashboard' }
 
         },
         {
             path: '/pharmacist-medicines',
             component: () => import('../views/dashboard/Pharmacist/Medicines.vue'),
             beforeEnter: [isUserHaveAccessToDashboard, isUserPharmacist],
-            meta: { title: 'Klinik - Medicines' }
+            meta: { title: 'IA Clinic - Medicines' }
         },
         {
             path: '/patient-dashboard',
             component: () => import('../views/dashboard/Patient/Dashboard.vue'),
             beforeEnter: [isUserHaveAccessToDashboard, isUserPatient],
-            meta: { title: 'Klinik - Dashboard' }
+            meta: { title: 'IA Clinic - Dashboard' }
         },
         {
             path: '/patient-appointments',
             component: () => import('../views/dashboard/Patient/Appointments.vue'),
             beforeEnter: [isUserHaveAccessToDashboard, isUserPatient],
-            meta: { title: 'Klinik - Appointments' }
+            meta: { title: 'IA Clinic - Appointments' }
         },
         {
             path: '/patient-orders',
             component: () => import('../views/dashboard/Patient/Orders.vue'),
             beforeEnter: [isUserHaveAccessToDashboard, isUserPatient],
-            meta: { title: 'Klinik - Orders' }
+            meta: { title: 'IA Clinic - Orders' }
         },
         {
             path: '/about',
             component: () => import('../views/About.vue'),
-            meta: { title: 'Klinik - About' }
+            meta: { title: 'IA Clinic - About' }
         },
     ],
 });
 
 router.beforeEach(async (to, from, next) => {
 
-    document.title = to.meta.title || 'Klinik'; 
+    document.title = to.meta.title || 'IA Clinic'; 
 
     await fetchUserRole()
     const userRole = useFetchUserRole()

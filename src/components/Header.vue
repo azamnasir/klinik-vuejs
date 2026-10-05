@@ -114,7 +114,7 @@ onMounted(async () => {
       class="w-[60%] flex justify-between items-center py-10 max-[1280px]:w-[80%] max-[1536px]:w-[90%] max-[1024px]:w-full max-[1024px]:px-10 max-[1024px]:justify-center">
       <nav class="flex items-center gap-[50px] w-full max-[768px]:justify-between">
         <h1 class="font-recursive font-bold text-4xl self-start text-[#333333] dark:text-white">
-          <RouterLink to="/">Klinik</RouterLink>
+          <RouterLink to="/">Ibrahim Afzal Clinic</RouterLink>
         </h1>
         <div class="flex max-[1024px]:hidden gap-20">
           <RouterLink to="/" class="font-recursive hover:text-primarycolor dark:text-white">Home</RouterLink>

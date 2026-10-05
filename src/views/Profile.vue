@@ -272,7 +272,7 @@ const uploadImage = async () => {
                             src="/src/assets/images/unkown-profile-pic.png" alt="photo">
 
                         <!-- change the app url to your application url -->
-                        <img v-else :src="'http://localhost:8000' + photo" alt=""
+                        <img v-else :src="'https://api.iaclinic.pk' + photo" alt=""
                             class="rounded-full w-16 h-16 border-4 mt-2 border-gray-200" id="photo">
                         <p v-if="imageSelected" class="text-green-600">You have selected a file.</p>
                         <div
