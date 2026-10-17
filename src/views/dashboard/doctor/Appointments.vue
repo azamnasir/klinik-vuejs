@@ -393,6 +393,10 @@ function capitalizeFirstLetter(string) {
                                     Patient Name
                                     <span>{{ getSortIcon('patient_name') }}</span>
                                 </th>
+								<th @click="sortBy('patient_phone')" class="cursor-pointer dark:text-gray-300">
+                                    Patient Phone
+                                    <span>{{ getSortIcon('patient_phone') }}</span>
+                                </th>
                                 <th @click="sortBy('patient_email')" class="cursor-pointer dark:text-gray-300">
                                     Patient Email
                                     <span>{{ getSortIcon('patient_email') }}</span>
@@ -440,6 +444,7 @@ function capitalizeFirstLetter(string) {
                         <tbody>
                             <tr v-if="searchQuery" v-for="appointment in searchedAppointments" :key="appointment.id">
                                 <td class="dark:text-gray-300">{{ appointment.patient_name }}</td>
+                                <td class="dark:text-gray-300">{{ appointment.patient_phone }}</td>
                                 <td class="dark:text-gray-300">{{ appointment.patient_email }}</td>
                                 <td class="dark:text-gray-300">{{ appointment.doctor_name }}</td>
                                 <td class="dark:text-gray-300">{{ appointment.doctor_email }}</td>
@@ -478,6 +483,7 @@ function capitalizeFirstLetter(string) {
                             <tr v-else-if="selectedStatus" v-for="appointmentByStatus in selectedByStatusAppointments"
                                 :key="appointmentByStatus.id">
                                 <td class="dark:text-gray-300">{{ appointmentByStatus.patient_name }}</td>
+                                <td class="dark:text-gray-300">{{ appointmentByStatus.patient_phone }}</td>
                                 <td class="dark:text-gray-300">{{ appointmentByStatus.patient_email }}</td>
                                 <td class="dark:text-gray-300">{{ appointmentByStatus.doctor_name }}</td>
                                 <td class="dark:text-gray-300">{{ appointmentByStatus.doctor_email }}</td>
@@ -514,6 +520,7 @@ function capitalizeFirstLetter(string) {
 
                             <tr v-else v-for="app in filteredAndSortedAppointments" :key="app.id">
                                 <td class="dark:text-gray-300">{{ app.patient_name }}</td>
+                                <td class="dark:text-gray-300">{{ app.patient_phone }}</td>
                                 <td class="dark:text-gray-300">{{ app.patient_email }}</td>
                                 <td class="dark:text-gray-300">{{ app.doctor_name }}</td>
                                 <td class="dark:text-gray-300">{{ app.doctor_email }}</td>

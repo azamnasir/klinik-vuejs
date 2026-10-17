@@ -54,6 +54,8 @@ const searchAvailability = async () => {
 
 
 const reserveAppointment = async (startTime, date, doctorId, day) => {
+	const timesModal = document.getElementById('times-modal')
+	timesModal.close()
     await axios.post('/appointments-register-appointment', {
         day: day,
         doctor: doctorId,
