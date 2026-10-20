@@ -181,10 +181,10 @@ const formatDate = (date) => {
                                     {{ formatDate(doctor.created_at) }}
                                 </td>
                                 <td class="dark:text-gray-300">
-                                    {{ doctor.appointment_price }}$
+                                    {{ doctor.appointment_price }}PKR
                                 </td>
                                 <td class="dark:text-gray-300">
-                                    {{ doctor.consultation_price }}$
+                                    {{ doctor.consultation_price }}PKR
                                 </td>
                                 <td class="dark:text-gray-300">
                                     {{ doctor.department_name }}
@@ -217,10 +217,10 @@ const formatDate = (date) => {
                                     {{ formatDate(doc.created_at) }}
                                 </td>
                                 <td class="dark:text-gray-300">
-                                    {{ doc.appointment_price }}$
+                                    {{ doc.appointment_price }}PKR
                                 </td>
                                 <td class="dark:text-gray-300">
-                                    {{ doc.consultation_price }}$
+                                    {{ doc.consultation_price }}PKR
                                 </td>
                                 <td class="dark:text-gray-300">
                                     {{ doc.department_name }}

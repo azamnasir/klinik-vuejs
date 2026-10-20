@@ -96,7 +96,7 @@ const goToStripeCheckout = (checkoutUrl) => {
                     <select v-model="doctorId"
                         class="select select-bordered w-full max-w-xs mt-3 bg-white dark:bg-slate-700 dark:text-gray-300">
                         <option disabled selected>Select a doctor</option>
-                        <option v-for="doctor in doctors" :key="doctor.id" :value="doctor.id">{{ doctor.name }} - ${{
+                        <option v-for="doctor in doctors" :key="doctor.id" :value="doctor.id">{{ doctor.name }} - PKR{{
                             doctor.appointment_price }}</option>
                     </select>
                 </div>
