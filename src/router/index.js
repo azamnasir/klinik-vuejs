@@ -354,6 +354,14 @@ const router = createRouter({
 
         },
         {
+            path: '/appointment-confirmation',
+            name: 'AppointmentConfirmation',
+            component: () => import('../views/AppointmentConfirmation.vue'),
+            props: (route) => ({ appointmentData: history.state?.appointmentData || history.state }),
+            meta: { title: 'IA Clinic - Appointment Confirmation' }
+
+        },
+        {
             path: '/appointment-checkout/cancel',
             component: () => import('../views/CheckoutAppointmentCancel.vue'),
             meta: { title: 'IA Clinic - Checkout Appointment Cancel' }

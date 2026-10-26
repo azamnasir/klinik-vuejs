@@ -1,10 +1,12 @@
 <script setup>
 import DatePicker from 'primevue/datepicker';
 import { computed, ref } from "vue";
+import { useRouter } from 'vue-router';
 import { useAppointmentsReservasion } from '../stores/appointmentsReservasion';
 import axios from 'axios';
 import { toast } from 'vue-sonner';
 
+const router = useRouter()
 const appointmentsReservasion = useAppointmentsReservasion()
 const departments = computed(() => appointmentsReservasion.departments)
 const doctors = computed(() => appointmentsReservasion.doctors)
@@ -53,6 +55,34 @@ const searchAvailability = async () => {
 }
 
 
+const goToAppointmentConfirmation = (resData, extra = {}) => {
+    const selectedDoctor = doctors.value?.find((d) => d.id === extra.doctorId);
+    const confirmationPayload = {
+        ...resData,
+        doctor: resData?.doctor || resData?.doctor_name || resData?.appointment?.doctor?.name || selectedDoctor?.name || '',
+        doctor_name: resData?.doctor_name || resData?.doctor || resData?.appointment?.doctor?.name || selectedDoctor?.name || '',
+        time: resData?.time || resData?.start_time || resData?.appointment?.start_time || extra.startTime || '',
+        start_time: resData?.start_time || resData?.time || resData?.appointment?.start_time || extra.startTime || '',
+        date: resData?.date || resData?.appointment?.date || extra.date || '',
+        day: resData?.day || resData?.appointment?.day || extra.day || '',
+        patient_name: resData?.patient_name || resData?.patient || resData?.appointment?.user?.name || '',
+    };
+
+    try {
+        sessionStorage.setItem('appointment_confirmation', JSON.stringify(confirmationPayload));
+    } catch (e) {
+        console.error('Failed to save to sessionStorage', e);
+    }
+
+    router.push({
+        name: 'AppointmentConfirmation',
+        state: {
+            appointmentData: confirmationPayload,
+            ...confirmationPayload
+        }
+    });
+};
+
 const reserveAppointment = async (startTime, date, doctorId, day) => {
 	const timesModal = document.getElementById('times-modal')
 	timesModal.close()
@@ -62,9 +92,9 @@ const reserveAppointment = async (startTime, date, doctorId, day) => {
         startTime: startTime,
         date: date
     }).then((res) => {
-        goToStripeCheckout(res.data.checkout_url)
+        goToAppointmentConfirmation(res.data, { startTime, date, doctorId, day })
     }).catch((err) => {
-        toast.error(err.response.data.message)
+        toast.error(err.response?.data?.message || 'Failed to register appointment')
     })
 }
 
